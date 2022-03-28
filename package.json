@@ -1,0 +1,27 @@
+{
+  "name": "todolist",
+  "version": "1.0.0",
+  "description": "ToDo List project: NodeJS + Express + Less + DustJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ikerm-biko2/ToDoList.git"
+  },
+  "author": "Iker Macaya Faber",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ikerm-biko2/ToDoList/issues"
+  },
+  "homepage": "https://github.com/Ikerm-biko2/ToDoList#readme",
+  "dependencies": {
+    "adaro": "^1.0.4",
+    "chai": "^4.3.6",
+    "express": "^4.17.3",
+    "mocha": "^9.2.2",
+    "node": "^17.7.1",
+    "nodemon": "^2.0.15"
+  }
+}
