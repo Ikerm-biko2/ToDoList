@@ -6,5 +6,6 @@
     <body>
         {> inputUserTasks /}
         {> viewerUserTasks /}
+        {> footer /}
     </body>
 </html>
