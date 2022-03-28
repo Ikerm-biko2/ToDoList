@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        {> header name="{title}" /}
     </head>
     <body>
     </body>

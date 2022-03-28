@@ -9,4 +9,6 @@ const tasks =
         {"id":7, "task": "OmniStore"}
 ]
 
-module.exports = {tasks}
+const title = "ToDo List"
+
+module.exports = {tasks, title}

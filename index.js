@@ -5,10 +5,10 @@ const app = express()
 
 app.use(express.static('public'))
 
-const {tasks} = require('./tasks')
+const {tasks, title} = require('./tasks')
 
 app.get('/', (req, res) => {
-    res.render('app', tasks)
+    res.render('app', {title, tasks})
 })
 
 app.listen(5001, () => {
