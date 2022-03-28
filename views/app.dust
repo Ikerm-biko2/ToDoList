@@ -4,5 +4,6 @@
         {> header name="{title}" /}
     </head>
     <body>
+        {> inputUserTasks /}
     </body>
 </html>
