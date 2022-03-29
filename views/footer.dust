@@ -4,11 +4,9 @@
         <link rel="stylesheet" href="/stylesheets/footer.css">
     </head>
     <body>
-        <div class='footer'>
-            {> "info/project" /}
-            {> "info/team" /}
-            {> "info/contact" /}
-            {> "info/logo" /}
-        </div>
+        {> "info/logo" /}
+        {> "info/project" /}
+        {> "info/team" /}
+        {> "info/contact" /}       
     </body>
 </html>

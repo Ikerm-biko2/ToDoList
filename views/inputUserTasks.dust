@@ -6,8 +6,8 @@
     <body>
         <div class='inputUserTasks'>
             <form action="/" method="post">
-                <label for="task">Enter task: </label>
-                <input id="task_id" type="text" name="task" value="Default value for task.">
+                <label>Enter task: </label>
+                <input type="text" name="task" value="Enter a new task.">
                 <input type="submit" value="OK">
             </form>
         </div>

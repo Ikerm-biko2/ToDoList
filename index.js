@@ -5,10 +5,17 @@ const app = express()
 
 app.use(express.static('public'))
 
+app.use(express.json())
+
 const {tasks, title} = require('./tasks')
 
 app.get('/', (req, res) => {
     res.render('app', {title, tasks})
+})
+
+app.post('/', (req, res) => {
+    const task = req.body
+    console.log({task})
 })
 
 app.listen(5001, () => {
