@@ -1,8 +1,12 @@
-var assert = require('assert');
-describe('Array', function () {
-  describe('#indexOf()', function () {
-    it('should return -1 when the value is not present', function () {
-      assert.equal([1, 2, 3].indexOf(4), -1);
-    });
+const assert = require('assert');
+const {tasks, title} = require('../tasks')
+
+describe('first suite of test',  () => {
+    it('title should be "ToDo List"', ()=> {
+        assert.equal(title, "ToDo List")
+    })
+
+    it('should be 7 task on tasks', () => {
+        assert.equal(tasks.length, 7)
+    })
   });
-});
