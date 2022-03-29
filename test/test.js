@@ -9,4 +9,4 @@ describe('first suite of test',  () => {
     it('should be 7 task on tasks', () => {
         assert.equal(tasks.length, 7)
     })
-  });
+});
