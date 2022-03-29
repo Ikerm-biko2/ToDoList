@@ -2,10 +2,13 @@
 <html>
     <head>
         {> header name="{title}" /}
+        <link rel="stylesheet" href="/stylesheets/app.css">
     </head>
     <body>
-        {> inputUserTasks /}
-        {> viewerUserTasks /}
-        {> footer /}
+        <div class='container'>
+            {> inputUserTasks /}
+            {> viewerUserTasks /}
+            {> footer /}
+        </div>
     </body>
 </html>

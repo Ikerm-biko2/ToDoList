@@ -1,1 +1,11 @@
-<h5>Soy el footer</h5>
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/stylesheets/footer.css">
+    </head>
+    <body>
+        <div class='footer'>
+            <h5>Soy el footer</h5>
+        </div>
+    </body>
+</html>

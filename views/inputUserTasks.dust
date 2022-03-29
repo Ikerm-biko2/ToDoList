@@ -1,1 +1,11 @@
-<h3>Soy el input user tasks</h3>
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/stylesheets/inputUserTasks.css">
+    </head>
+    <body>
+        <div class='inputUserTasks'>
+            <h3>Soy el input user tasks</h3>
+        </div>
+    </body>
+</html>
