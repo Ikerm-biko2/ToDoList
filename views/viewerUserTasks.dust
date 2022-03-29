@@ -5,7 +5,11 @@
     </head>
     <body>
         <div class='viewerUserTasks'>
-            <h3>Soy el viewer user tasks</h3>
+            {#tasks}
+                <ul>
+                    <li>{task}</li>
+                </ul>
+            {/ tasks}
         </div>
     </body>
 </html>
