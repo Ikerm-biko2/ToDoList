@@ -1,0 +1,6 @@
+<button onclick=deleteTask({idTask})>{buttonName}</button>
+<script>
+    const deleteTask = (idTask) => {
+        console.log('Estoy borrando el id ' + idTask) 
+    }
+</script>

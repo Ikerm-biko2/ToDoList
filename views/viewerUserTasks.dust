@@ -7,7 +7,7 @@
         <div class='viewerUserTasks'>
             {#tasks}
                 <ul>
-                    <li>{task}</li>
+                    <li>{task} {> "utils/button" idTask="{id}" buttonName="Delete" /}</li>
                 </ul>
             {/ tasks}
         </div>
