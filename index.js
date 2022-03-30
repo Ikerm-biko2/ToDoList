@@ -11,14 +11,16 @@ app.use(express.urlencoded({
 
 app.use(express.json())
 
-const {tasks, title} = require('./tasks')
+let {tasks, title} = require('./tasks')
 
 app.get('/', (req, res) => {
     res.render('app', {title, tasks})
 })
 
 app.post('/', (req, res) => {
-    res.json(req.body)
+    const task = req.body.task
+    tasks = tasks.concat({"id": tasks.length + 1, "task": task})
+    res.render('app', {title, tasks})
 })
 
 app.listen(5001, () => {
