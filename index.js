@@ -1,5 +1,6 @@
 const express = require('express')
 const adaro = require('adaro')
+const { js } = require('adaro')
 const {readFile, writeFile} = require('fs').promises
 
 const app = express()
@@ -12,20 +13,7 @@ app.use(express.urlencoded({
 
 app.use(express.json())
 
-
-const start1 = async() => {
-    try {
-        const first = await readFile('./content/first.txt', 'utf-8').then(JSON.parse)
-        const second = await readFile('./content/second.txt', 'utf-8')
-        await writeFile('./content/result-mind-grenade.txt', `THIS IS AWESOME: ${first} ${second}`)
-        console.log(first);
-        console.log(second);
-    } catch(error) {
-        console.log(error);
-    }
-}
-
-const start = async() => {
+const getTasks = async() => {
     try {
         const tasks = await readFile('./data/data.json', 'utf8').then(JSON.parse)
         return tasks
@@ -34,18 +22,34 @@ const start = async() => {
     }
 }
 
+const addTask = async(task) => {
+    try {
+        await writeFile('./data/data.json', task)
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 app.get('/', (req, res) => {
-    start().then( (data) => {
+    getTasks().then( (data) => {
         const tasks = data.tasks
         const title = data.title
+
         res.render('app', {title, tasks})
     })
 })
 
 app.post('/', (req, res) => {
-    const task = req.body.task
-    tasks = tasks.concat({"id": tasks.length + 1, "task": task})
-    res.render('app', {title, tasks})
+    getTasks().then( (data) => {
+        const tasks = data.tasks
+        const title = data.title
+        const task = {"id": tasks.length + 1, "task": req.body.task}
+        data.tasks.push(task)
+        const jsonTask = JSON.stringify(data);
+        addTask(jsonTask).then(
+            res.render('app', {title, tasks})
+        )
+    })
 })
 
 app.listen(5001, () => {
