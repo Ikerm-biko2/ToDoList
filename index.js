@@ -1,5 +1,6 @@
 const express = require('express')
 const adaro = require('adaro')
+const {readFile, writeFile} = require('fs').promises
 
 const app = express()
 
@@ -11,10 +12,34 @@ app.use(express.urlencoded({
 
 app.use(express.json())
 
-let {tasks, title} = require('./tasks')
+
+const start1 = async() => {
+    try {
+        const first = await readFile('./content/first.txt', 'utf-8').then(JSON.parse)
+        const second = await readFile('./content/second.txt', 'utf-8')
+        await writeFile('./content/result-mind-grenade.txt', `THIS IS AWESOME: ${first} ${second}`)
+        console.log(first);
+        console.log(second);
+    } catch(error) {
+        console.log(error);
+    }
+}
+
+const start = async() => {
+    try {
+        const tasks = await readFile('./data/data.json', 'utf8').then(JSON.parse)
+        return tasks
+    } catch(error) {
+        console.log(error);
+    }
+}
 
 app.get('/', (req, res) => {
-    res.render('app', {title, tasks})
+    start().then( (data) => {
+        const tasks = data.tasks
+        const title = data.title
+        res.render('app', {title, tasks})
+    })
 })
 
 app.post('/', (req, res) => {
