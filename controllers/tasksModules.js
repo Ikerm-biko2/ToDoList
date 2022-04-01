@@ -1,4 +1,3 @@
-
 const {readFile, writeFile} = require('fs').promises
 
 const getAllTasks = async() => {
@@ -45,43 +44,3 @@ module.exports = {
     start,
     updateJSON
 }
-
-/*
-const getTasks = async() => {
-    try {
-        const tasks = await readFile('./data/data.json', 'utf8').then(JSON.parse)
-        return tasks
-    } catch(error) {
-        console.log(error);
-    }
-}
-
-
-
-app.get('/', (req, res) => {
-    getTasks().then( (data) => {
-        const tasks = data.tasks
-        const title = data.title
-
-        res.render('app', {title, tasks})
-    })
-})
-
-app.post('/', (req, res) => {
-    console.log('Hola Iker');
-    console.log(tasks);
-    getTasks().then( (data) => {
-        const tasks = data.tasks
-        const title = data.title
-        const task = {"id": tasks.length + 1, "task": req.body.task}
-        data.tasks.push(task)
-        const jsonTask = JSON.stringify(data);
-        addTask(jsonTask).then(
-            res.render('app', {title, tasks})
-        )
-    })
-})
-
-app.engine('dust', adaro.dust({}));
-app.set('view engine', 'dust');
-*/
