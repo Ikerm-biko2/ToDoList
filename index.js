@@ -40,6 +40,8 @@ app.get('/', (req, res) => {
 })
 
 app.post('/', (req, res) => {
+    console.log('Hola Iker');
+    console.log(tasks);
     getTasks().then( (data) => {
         const tasks = data.tasks
         const title = data.title
