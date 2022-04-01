@@ -5,7 +5,7 @@
     </head>
     <body>
         <div class='inputUserTasks'>
-            <form action="/" method="post">
+            <form action="/api/v1/tasks" method="post">
                 <label>Enter task: </label>
                 <input type="text" name="task" value="Enter a new task.">
                 <input type="submit" value="OK">
